@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700&family=Overpass:wght@100;300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');
+
+:root{
+    --red:hsl(1, 90%, 64%);
+    --blue:hsl(219, 85%, 26%);
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish:hsl(210, 60%, 98%);
+    --Light-grayish:hsl(211, 68%, 94%);
+    --Light-grayish-blue:hsl(205, 33%, 90%);
+    --Grayish:hsl(219, 14%, 63%);
+    --Dark-grayish:hsl(219, 12%, 42%);
+    --Very-dark:hsl(224, 21%, 14%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width:100%;
+}
+.main{
+    background:var(--Very-light-grayish);
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+}
+.container{
+    display:flex;
+    flex-direction:column;
+    row-gap:2rem;
+    padding:1.5rem 1.2rem;
+    width:40%;
+    height:auto;
+    justify-content: center;
+    align-items: center;
+    background:var(--White);
+    border-radius: 16px;
+    box-shadow:2px 4px 4px rgba(0,0,0,0.2);
+    /* margin-top: 6rem; */
+}
+.notification-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.notification-left{
+    display:flex;
+    column-gap: .8rem;
+}
+.notification-left h3{
+   font-size: 22px;
+   font-weight:700;
+}
+.notification-left span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:.2rem .5rem;
+    border-radius: 4px;
+    background:var(--blue);
+    color:var(--White);
+}
+.mark-read{
+    font-size: 16px;
+    font-weight:300px;
+    cursor: pointer;
+    color:var(--Grayish);
+}
+.mark-read:hover{
+    color: var(--blue);
+}
+.notification-content{
+    display:flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.notification-content .item{
+    display:flex;
+    column-gap: .5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:100%;
+    height:auto;
+    padding:1rem .8rem;
+    border-radius:8px;
+}
+.item.unread{
+    background: var(--Very-light-grayish);
+    position:relative;
+}
+
+
+.item img{
+    display:flex;
+    width:40px;
+    height:40px;
+}
+.img-chess:hover{
+  cursor: pointer;
+  border:3px solid var(--Light-grayish);
+  box-shadow:2px 2px 4px rgba(0,0,0,0.2);
+}
+.item .item-text{
+    display:flex;
+    flex-direction: column;
+    /* row-gap:.rem;  */
+}
+.item.unread .item-text {
+    position: relative;
+}
+
+.item.unread .item-text p::after{
+    position: absolute;
+    content:"";
+    right:-1rem;
+    top:.3rem;
+    width:10px;
+    height: 10px;
+    background:var(--red);
+    border-radius: 50%;
+}
+.item-text p{
+    font-size: 16px;
+    color:var(--Grayish);
+}
+.item-text p b{
+    color:var(--Very-dark);
+}
+.item-text p strong{
+    color:var(--Dark-grayish)
+}
+.item-text p chess{
+    color:var(--blue);
+    font-weight: 700;
+}
+.item-text p b:hover,.item-text p strong:hover,.item-text p chess:hover{
+    color:var(--blue);
+    font-weight: 800;
+    cursor: pointer;
+}
+.user-text{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem .8rem;
+    border: 1px solid var(--Light-grayish);
+    margin-top: .3rem;
+}
+.user-text:hover{
+    background: var(--Very-light-grayish);
+    cursor:pointer;
+}
+.time{
+    font-size:14px;
+    color:var(--Grayish);
+}
+.kimber{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+/* .user-text p{
+    margin-top:.5rem;
+    margin-left: 1rem;
+} */
+
+@media screen and (max-width:990px) {
+  
+    .container{
+        width:95%;
+        height:max-content;
+    }
+    /* .item.unread:nth-child(1) .item-text p::after{
+     right:1.2rem;
+     top:1.8rem;
+    }
+    .item.unread:nth-child(2) .item-text p::after{
+     top:0.6rem;
+    }
+    .item.unread:nth-child(3) .item-text p::after{
+     left:6rem;
+     top:1.8rem;
+    } */
+
+}
+
+@media screen and (max-width:690px) {
+  
+    .item.unread:nth-child(1) .item-text p::after{
+     right:1.2rem;
+     top:1.8rem;
+    }
+    .item.unread:nth-child(2) .item-text p::after{
+     top:0.6rem;
+    }
+    .item.unread:nth-child(3) .item-text p::after{
+     left:6rem;
+     top:1.8rem;
+    }
+
+}
